@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: spring-jms-example
+  activemq:
+    broker-url: failover:(tcp://127.0.0.1:61616)?initialReconnectDelay=100&timeout=3000
+    user: admin
+    password: admin
+    pool:
+      enabled: true
+      max-connections: 3
+      max-sessions-per-connection: 15
+    packages:
+      trust-all: true
+  jms:
+    cache:
+      enabled: true
+config:
+  direct:
+    queue: direct_queue
